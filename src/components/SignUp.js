@@ -11,7 +11,7 @@ export default function SignUp(){
                 <input type="password" placeholder="password@123"/>
                 <p>Confirm Password</p>
                 <input type="password" placeholder="password@123"/>
-                <button className = "LogIn__btn" type="submit">Log In</button>
+                <button className = "submit__btn" type="submit">Log In</button>
             </form>
             <p className="notLogIn">Already Signed In? <Link to = "/login">Log In</Link></p>
         </div>

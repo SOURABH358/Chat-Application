@@ -8,7 +8,7 @@ function LogIn() {
                 <input id = "username" type="text" placeholder="username_123" />
                 <p>Password</p>
                 <input type="password" placeholder="password@123"/>
-                <button className = "LogIn__btn" type="submit">Log In</button>
+                <button className = "submit__btn" type="submit">Log In</button>
             </form>
             <p className="notLogIn">Not Logged In? <Link to = "/signup">Sign Up</Link></p>
         </div>

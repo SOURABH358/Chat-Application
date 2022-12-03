@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    $yellow-1: rgb(254,254,34);
+    $yellow-2: rgb(254,254,51);
+    $yellow-3: rgb(255,244,79);
+    $black-1: rgb(0,0,0);
+    $black-2: rgb(8,8,8);
+    $black-3: rgb(16,12,8);
+    $white: rgb(255,255,255);
+    $light-blue: rgb(232,244,248);
+    $grey: rgb(220,220,220);
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+input:focus{
+    outline: none;
+}
+body{
+    color: var($black-1);
+    min-height: 100vh;
+}
+.LogIn__section{
+    width: 100%;
+    height: 100vh;
+    background-color: $yellow-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .LogIn__container{
+        padding: 2rem;
+        width: 31.25rem;
+        height: 31.25rem;
+        background-color: $white;
+        border-radius: 1.25rem;
+        box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.form{
+    width: 100%;
+}
+.form p{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.form input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    /* background-color: $light-blue; */
+}
+.submit__btn{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    height: 2.5rem;
+    background-color: $yellow-1;
+    color: black;
+    border: none;
+    /* border: 2px solid $black-1; */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.3);
+}
+
+.notLogIn{
+    font-size: 0.8rem;
+}
+.SignUp__section{
+    width: 100%;
+    height: 100vh;
+    background-color: $yellow-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .SignUp__container{
+        padding: 2rem;
+        width: 31.25rem;
+        height: 40.625rem;
+        background-color: $white;
+        border-radius: 1.25rem;
+        box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h2{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+}
+.home__section{
+    display: flex;
+    height: 100vh;
+    .accounts__area{
+        width: 25%;
+        background-color: $yellow-1;
+        border-right: 1px solid $grey;
+        box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
+        .accounts__nav{
+            width: 100%;
+            height: 5rem;
+            border-bottom: 2px solid $grey;
+            padding: 0 1rem;
+
+            display: flex;
+            align-items: center;
+            .user__profile{
+                
+                img{
+                    width: 3rem;
+                height: 3rem;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .chat__area{
+        width: 75%;
+        .navbar{
+            height: 5rem;
+            background-color: $yellow-1;
+            box-shadow: 4px 0px 8px 0 rgba(0,0,0,0.3);
+        }
+    }
+}
