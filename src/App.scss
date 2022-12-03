@@ -128,7 +128,7 @@ body{
         width: 25%;
         background-color: $grey;
         // border-right: 1px solid $grey;
-        box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
+        // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
         .accounts__nav{
             position: sticky;
             top: 0;
@@ -208,6 +208,16 @@ body{
             width: 75%;
             background-color: $grey;
             height: 5rem;
+            display: grid;
+            place-items: center;
+            input{
+                width: 80%;
+                height: 2.5rem;
+                padding: 0 1rem;
+                border-radius: 1rem;
+                border: none;
+                box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.3);
+            }
         }
     }
 }

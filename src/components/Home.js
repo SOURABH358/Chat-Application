@@ -146,7 +146,7 @@ export default function Home() {
                     <AiOutlineMenu className="icons" />
                 </nav>
                 <div className="message__area">
-
+                    <input type="text" placeholder = "Type..."/>
                 </div>
             </div>
         </section>
