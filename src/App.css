@@ -6,12 +6,71 @@
     --black-1: rgb(0,0,0);
     --black-2: rgb(8,8,8);
     --black-3: rgb(16,12,8);
+    --white: rgb(255,255,255);
 }
 *,*::after,*::before{
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+input:focus{
+    outline: none;
 }
 body{
     color: var(--black-1);
+    min-height: 100vh;
+}
+.LogIn__section{
+    width: 100%;
+    height: 100vh;
     background-color: var(--yellow-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LogIn__container{
+    padding: 2rem;
+    width: 31.25rem;
+    height: 31.25rem;
+    background-color: var(--white);
+    border-radius: 1.25rem;
+    box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.LogIn__container h2{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.LogIn__form{
+    width: 100%;
+}
+.LogIn__form p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.LogIn__form input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 3rem;
+}
+.LogIn__btn{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    height: 2.5rem;
+    background-color: var(--yellow-1);
+    color: black;
+    border: none;
+    border: 2px solid var(--black-1);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.notLogIn{
+    font-size: 0.8rem;
 }
