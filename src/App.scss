@@ -7,7 +7,7 @@
     $black-3: rgb(16,12,8);
     $white: rgb(255,255,255);
     $light-blue: rgb(232,244,248);
-    $grey: rgb(220,220,220);
+    $grey: rgb(248,248,248);
 *,*::after,*::before{
     padding: 0;
     margin: 0;
@@ -21,6 +21,19 @@ body{
     color: var($black-1);
     min-height: 100vh;
 }
+::-webkit-scrollbar{
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track{
+    background-color: $grey;
+
+}
+::-webkit-scrollbar-thumb{
+    width: 0.1rem;
+    height: 5rem;
+    background-color: $black-1;
+}
+
 .LogIn__section{
     width: 100%;
     height: 100vh;
@@ -110,18 +123,23 @@ body{
     display: flex;
     height: 100vh;
     .accounts__area{
+        position: relative;
+        height: 100vh;
         width: 25%;
-        background-color: $yellow-1;
-        border-right: 1px solid $grey;
+        background-color: $grey;
+        // border-right: 1px solid $grey;
         box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
         .accounts__nav{
+            position: sticky;
+            top: 0;
             width: 100%;
-            height: 5rem;
-            border-bottom: 2px solid $grey;
+            height: 12vh;
+            background-color: $yellow-1;
+            box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
             padding: 0 1rem;
-
             display: flex;
             align-items: center;
+            justify-content: space-between;
             .user__profile{
                 
                 img{
@@ -131,13 +149,68 @@ body{
                 }
             }
         }
+        .accounts__container{
+            height: 88vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            .account{
+                padding: 1rem;
+                display: flex;
+                gap: 2rem;
+                border-bottom: 1px solid $black-3;
+                align-items: center;
+                .accounts__profile{
+                    img{
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .search__container{
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            background-color: $white;
+            width: 25%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 20;
+        }
     }
     .chat__area{
         width: 75%;
+        
+
         .navbar{
+            height: 12vh;
+            background-color: $yellow-2;
+            box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem 1rem;
+            .account__profile{
+                img{
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .message__area{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 75%;
+            background-color: $grey;
             height: 5rem;
-            background-color: $yellow-1;
-            box-shadow: 4px 0px 8px 0 rgba(0,0,0,0.3);
         }
     }
+}
+.icons{
+    font-size: 1.5rem;
 }
