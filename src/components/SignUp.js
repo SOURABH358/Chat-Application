@@ -23,7 +23,7 @@ export default function SignUp() {
                 const res = await createUserWithEmailAndPassword(auth, email, password);
                 await setDoc(doc(db, "users", res.user.uid), {
                     uid: res.user.uid,
-                    username,
+                    displayName: username,
                     email
                   });
                 console.log(res)
@@ -37,7 +37,7 @@ export default function SignUp() {
     return (
         <section className="SignUp__section">
             <div className="SignUp__container">
-                <h2>Log In</h2>
+                <h2>Sign Up</h2>
                 <form id="SignUp__form" className="form" onSubmit={(e) => handleSubmit(e)}>
                     <p>Username</p>
                     <input id="username" type="text" placeholder="username_123" />
@@ -47,9 +47,9 @@ export default function SignUp() {
                     <input type="password" placeholder="password@123" />
                     <p>Confirm Password *</p>
                     <input type="password" placeholder="password@123" />
-                    <button className="submit__btn" type="submit">Log In</button>
+                    <button className="submit__btn" type="submit">Sign Up</button>
                 </form>
-                {/* <p className="notLogIn">Already Signed In? <Link to="/login">L</Link></p> */}
+                <p className="notLogIn">Already Signed In? <Link to="/login">L</Link></p>
             </div>
         </section>
     )

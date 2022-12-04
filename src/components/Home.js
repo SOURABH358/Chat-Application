@@ -1,12 +1,18 @@
 import { AiOutlineMenu, AiOutlineSend } from "react-icons/ai";
+import { useContext } from "react";
+import {AppContext} from "./../Context/context"
+import UserMenu from "./UserMenu";
 export default function Home() {
+    const {currentUser} = useContext(AppContext);
     return (
         <section className="home__section">
             <div className="accounts__area">
                 <div className="accounts__nav">
+                    <UserMenu/>
                     <div className="user__profile">
                         <img src="/assets/user.jpg" alt="user-pic" />
                     </div>
+                    <p>{currentUser.username}</p>
                     <AiOutlineMenu className="icons" />
                 </div>
                 <div className="accounts__container">

@@ -141,7 +141,21 @@ body {
         margin-bottom: 3rem;
     }
 }
-
+.user__menu{
+    position: absolute;
+    background-color: $white;
+    top: 6rem;
+    padding: 0;
+    right: 0;
+    font-size: 0.9rem;
+    p{
+        padding: 1rem 1rem;
+        cursor: pointer;
+        &:hover{
+            background-color: $grey;
+        }
+    }
+}
 .home__section {
     display: flex;
     height: 100vh;
