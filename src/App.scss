@@ -21,7 +21,9 @@ $grey: rgb(248, 248, 248);
 input:focus {
     outline: none;
 }
-
+input[type="file"]{
+    display: none;
+}
 body {
     color: var($black-1);
     min-height: 100vh;
@@ -148,7 +150,7 @@ body {
     padding: 0;
     right: 0;
     font-size: 0.9rem;
-    p{
+    p, .form{
         padding: 1rem 1rem;
         cursor: pointer;
         &:hover{
