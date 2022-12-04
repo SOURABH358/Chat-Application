@@ -1,6 +1,8 @@
+import { auth } from "./firebase"
+import { signOut } from "firebase/auth"
 export default function UserMenu(){
-    function handleLogOut(){
-        
+   async function handleLogOut(){
+        const res = await signOut(auth)
     }
     return (
         <div className="user__menu">
