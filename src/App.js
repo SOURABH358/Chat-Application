@@ -7,9 +7,13 @@ import './App.scss'
 export default function App(){
     return (
         <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<LogIn/>}/>
-            <Route path="/signup" element={<SignUp/>}/>
+            <Route path="/" >
+                <Route index element={<Home/>}></Route>
+                {/* <Route path="login" element={<LogIn/>}/> */}
+                <Route path="login" element={<SignUp/>}/>
+            </Route>
+
+            
         </Routes>
     )
 }
