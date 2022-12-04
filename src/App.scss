@@ -1,57 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-    $yellow-1: rgb(254,254,34);
-    $yellow-2: rgb(254,254,51);
-    $yellow-3: rgb(255,244,79);
-    $black-1: rgb(0,0,0);
-    $black-2: rgb(8,8,8);
-    $black-3: rgb(16,12,8);
-    $white: rgb(255,255,255);
-    $light-blue: rgb(232,244,248);
-    $grey: rgb(248,248,248);
-*,*::after,*::before{
+$yellow-1: rgb(254, 254, 34);
+$yellow-2: rgb(254, 254, 51);
+$yellow-3: rgb(255, 244, 79);
+$black-1: rgb(0, 0, 0);
+$black-2: rgb(8, 8, 8);
+$black-3: rgb(16, 12, 8);
+$white: rgb(255, 255, 255);
+$light-blue: rgb(232, 244, 248);
+$grey: rgb(248, 248, 248);
+
+*,
+*::after,
+*::before {
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
-body{
+
+body {
     color: var($black-1);
     min-height: 100vh;
+    background-color: lightskyblue;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 0.5rem;
 }
-::-webkit-scrollbar-track{
-    background-color: $grey;
 
-}
-::-webkit-scrollbar-thumb{
-    width: 0.1rem;
-    height: 5rem;
-    background-color: $black-1;
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    padding: 0 0.1rem;
 }
 
-.LogIn__section{
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 0.5rem;
+}
+
+.LogIn__section {
     width: 100%;
     height: 100vh;
     background-color: $yellow-1;
     display: flex;
     justify-content: center;
     align-items: center;
-    .LogIn__container{
+
+    .LogIn__container {
         padding: 2rem;
         width: 31.25rem;
         height: 31.25rem;
         background-color: $white;
         border-radius: 1.25rem;
-        box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.3);
+        box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
         align-items: center;
-        h2{
+
+        h2 {
             width: 100%;
             text-align: center;
             margin-bottom: 3rem;
@@ -59,15 +69,17 @@ body{
     }
 }
 
-.form{
+.form {
     width: 100%;
 }
-.form p{
+
+.form p {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
-.form input{
+
+.form input {
     width: 100%;
     border: none;
     border-bottom: 1px solid black;
@@ -76,7 +88,8 @@ body{
     line-height: 2.5rem;
     /* background-color: $light-blue; */
 }
-.submit__btn{
+
+.submit__btn {
     width: 100%;
     margin: auto;
     margin-bottom: 1rem;
@@ -89,79 +102,91 @@ body{
     border-radius: 0.5rem;
     cursor: pointer;
     transition: 0.5s ease-in-out;
-    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.3);
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
-.notLogIn{
+.notLogIn {
     font-size: 0.8rem;
 }
-.SignUp__section{
+
+.SignUp__section {
     width: 100%;
     height: 100vh;
     background-color: $yellow-1;
     display: flex;
     justify-content: center;
     align-items: center;
-    .SignUp__container{
+
+    .SignUp__container {
         padding: 2rem;
         width: 31.25rem;
         height: 40.625rem;
         background-color: $white;
         border-radius: 1.25rem;
-        box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.3);
+        box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    h2{
+
+    h2 {
         width: 100%;
         text-align: center;
         margin-bottom: 3rem;
     }
 }
-.home__section{
+
+.home__section {
     display: flex;
     height: 100vh;
-    .accounts__area{
+    padding: 2rem 4rem;
+
+    .accounts__area {
+        box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.3);
         position: relative;
-        height: 100vh;
+        height: 100%;
         width: 25%;
         background-color: $grey;
+
         // border-right: 1px solid $grey;
         // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-        .accounts__nav{
+        .accounts__nav {
             position: sticky;
             top: 0;
             width: 100%;
             height: 12vh;
             background-color: $yellow-1;
-            box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
+            box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.3);
             padding: 0 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .user__profile{
-                
-                img{
+
+            .user__profile {
+
+                img {
                     width: 3rem;
-                height: 3rem;
+                    height: 3rem;
                     border-radius: 50%;
                 }
             }
         }
-        .accounts__container{
-            height: 88vh;
+
+        .accounts__container {
+            height: calc(100% - 12vh - 5rem);
             display: flex;
             flex-direction: column;
             overflow-y: scroll;
-            .account{
+
+            .account {
                 padding: 1rem;
                 display: flex;
                 gap: 2rem;
                 border-bottom: 1px solid $black-3;
                 align-items: center;
-                .accounts__profile{
-                    img{
+
+                .accounts__profile {
+                    img {
                         width: 2rem;
                         height: 2rem;
                         border-radius: 50%;
@@ -169,58 +194,139 @@ body{
                 }
             }
         }
-        .search__container{
+
+        .search__container {
             height: 5rem;
             display: flex;
             align-items: center;
-            background-color: $white;
-            width: 25%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            background-color: $yellow-1;
+            width: 100%;
             z-index: 20;
+            display: grid;
+            place-items: center;
+
+            input {
+                border-radius: 1rem;
+                width: 80%;
+                height: 2.5rem;
+                border: none;
+                padding: 0 1rem;
+                box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.3);
+            }
         }
     }
-    .chat__area{
-        width: 75%;
-        background-image: url(./assets/background.jpg);
 
-        .navbar{
+    .chat__area {
+        box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.3);
+        width: 75%;
+        height: 100%;
+
+
+        .navbar {
             height: 12vh;
             background-color: $yellow-2;
-            box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.3);
+            box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0rem 1rem;
-            .account__profile{
-                img{
+
+            .account__profile {
+                img {
                     width: 3rem;
                     height: 3rem;
                     border-radius: 50%;
                 }
             }
         }
-        .message__area{
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 75%;
+
+        .chat__section {
+            width: 100%;
+            height: calc(100% - 12vh - 5rem);
+            overflow-y: scroll;
+            background-image: url(./../public/assets/background-2.jpg);
+            background-position: center;
+
+            .chat__container {
+                width: 100%;
+                padding: 0 1rem;
+                padding-bottom: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                gap: 1rem;
+
+                .message {
+                    display: flex;
+                    gap: 1rem;
+
+                    .message__account {
+                        img {
+                            width: 2rem;
+                            height: 2rem;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .chat {
+                        max-width: 20rem;
+                        height: fit-content;
+                        background-color: $yellow-1;
+                        padding: 0.5rem 1rem;
+                        border-radius: 0.5rem;
+                        
+                        line-height: 1.5rem;
+
+                        img {
+                            width: 10rem;
+                        }
+                    }
+
+                    .chat__image {
+                        background: none;
+                        padding: 0;
+                    }
+                }
+
+                .user {
+                    align-self: flex-end;
+                    flex-direction: row-reverse;
+
+                    
+                }
+            }
+
+        }
+
+        .message__area {
+
+            width: 100%;
             background-color: $grey;
             height: 5rem;
             display: grid;
             place-items: center;
-            input{
+
+            .message__form {
                 width: 80%;
-                height: 2.5rem;
-                padding: 0 1rem;
                 border-radius: 1rem;
-                border: none;
-                box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.3);
+                box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                background-color: $white;
+                input {
+                    width: 96%;
+                    height: 2.5rem;
+                    padding: 0 1rem;
+                    border: none;
+                    
+                }
             }
         }
     }
+
 }
-.icons{
+
+.icons {
     font-size: 1.5rem;
 }
