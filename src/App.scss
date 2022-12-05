@@ -226,6 +226,7 @@ body {
             z-index: 20;
             display: grid;
             place-items: center;
+            position: relative;
 
             input {
                 border-radius: 1rem;
@@ -234,6 +235,26 @@ body {
                 border: none;
                 padding: 0 1rem;
                 box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.3);
+            }
+            .search__result{
+                position: absolute;
+                top:0rem;
+                left: 0;
+                width: 100%;
+                transform: translateY(-100%);
+                display: flex;
+                gap: 2rem;
+                align-items: center;
+                background-color: $yellow-1;
+                padding: 1rem;
+                &:hover{
+                    background-color: $yellow-3;
+                }
+                .search__avatar img{
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 50%;
+                }
             }
         }
     }
@@ -254,6 +275,9 @@ body {
             padding: 0rem 1rem;
 
             .account__profile {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
                 img {
                     width: 3rem;
                     height: 3rem;

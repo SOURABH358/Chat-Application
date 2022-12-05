@@ -86,6 +86,7 @@ export default function Home() {
                 <nav className="navbar">
                     <div className="account__profile">
                         <img src="/assets/account-1.jpg" alt="account-pic" />
+                        <p>Jonas</p>
                     </div>
                     <AiOutlineMenu className="icons" />
                 </nav>

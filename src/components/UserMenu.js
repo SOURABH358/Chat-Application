@@ -7,7 +7,7 @@ import { AppContext } from "./../Context/context"
 import { doc, updateDoc } from "firebase/firestore";
 export default function UserMenu(){
     const {currentUser} = useContext(AppContext)
-    const storageRef = ref(storage, 'user.jpg');
+    const storageRef = ref(storage, `${currentUser.displayName}.jpg`);
     function handleProfileChange(e){
         e.preventDefault();
         const file = e.target[0].files[0];
