@@ -5,10 +5,8 @@ import { storage } from "./firebase";
 import { useContext } from "react";
 import { AppContext } from "./../Context/context"
 import { doc, updateDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 export default function UserMenu(){
     const {currentUser} = useContext(AppContext)
-    const navigate = useNavigate();
     const storageRef = ref(storage, 'user.jpg');
     function handleProfileChange(e){
         e.preventDefault();

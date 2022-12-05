@@ -2,6 +2,7 @@ import { AiOutlineMenu, AiOutlineSend } from "react-icons/ai";
 import { useContext } from "react";
 import {AppContext} from "./../Context/context"
 import AccountsNav from "./AccountsNav";
+import SearchContainer from "./SearchContainer";
 export default function Home() {
     const {currentUser} = useContext(AppContext);
     return (
@@ -79,9 +80,7 @@ export default function Home() {
 
 
                 </div>
-                <div className="search__container">
-                    <input type="text" placeholder="Type..." />
-                </div>
+                <SearchContainer/>
             </div>
             <div className="chat__area">
                 <nav className="navbar">
@@ -139,10 +138,10 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="message__area">
-                    <div className="message__form">
+                    <form className="message__form">
                         <input type="text" placeholder="Type..." />
                         <AiOutlineSend className="icons" />
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
