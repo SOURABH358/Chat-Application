@@ -7,39 +7,42 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase";
 export default function Home() {
     const { currentUser } = useContext(AppContext);
-    // const [ accounts, setAccounts ] = useState(null)
-    // console.log(accounts)
-    // useEffect(() => {
-    //     function getUsers() {
-    //         try{
-    //             const unsub = onSnapshot(doc(db, "userChat", currentUser.uid), (doc) => {
-    //                 console.log(Object.entries(doc.data()))
-    //                 setAccounts(Object.entries(doc.data()))
-    //             });
-    //             return () => {
-    //                 unsub();
-    //             }
-    //         }catch(error){
-    //             console.log(error)
-    //         }
-    //     }
-    //     getUsers();
+    const [accounts, setAccounts] = useState([])
+    console.log(accounts)
+    useEffect(() => {
+        function getUsers() {
+            try {
+                const unsub = onSnapshot(doc(db, "userChat", currentUser.uid), (doc) => {
+                    setAccounts(Object.entries(doc.data()))
+                });
+                return () => {
+                    unsub();
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        currentUser.uid && getUsers();
 
-    // }, [])
+    }, [currentUser.uid])
     return (
         <section className="home__section">
             <div className="accounts__area">
                 <AccountsNav />
                 <div className="accounts__container">
-                <div className="account">
+
+                    {accounts.map((account) => {
+                        return(
+                        <div className="account">
                             <div className="accounts__profile">
-                                <img src="" alt="accounts__pic" />
+                                <img src={account[1].userInfo.img} alt="accounts__pic" />
                             </div>
                             <div>
-                                <p>Hello</p>
+                                <p>{account[1].userInfo.displayName}</p>
                             </div>
-                        </div> 
-                    
+                        </div>)
+                    })}
+
                 </div>
                 <SearchContainer />
             </div>

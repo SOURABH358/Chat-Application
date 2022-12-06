@@ -8,7 +8,6 @@ import { AppContext } from "./Context/context";
 export default function App(){
     const {currentUser} = useContext(AppContext)
     function ProtectedRoute({children}){
-        console.log(currentUser)
         if(!currentUser){
             return <Navigate to="/login" />
         }
