@@ -1,4 +1,3 @@
-import { AiOutlineMenu, AiOutlineSend } from "react-icons/ai";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "./../Context/context"
 import AccountsNav from "./AccountsNav";
@@ -39,7 +38,7 @@ export default function Home() {
 
                     {accounts.map((account) => {
                         return(
-                        <div className="account" onClick={()=>handleSelect(account[1].userInfo)}>
+                        <div className="account" key = {account[1].userInfo.uid} onClick={()=>handleSelect(account[1].userInfo)}>
                             <div className="accounts__profile">
                                 <img src={account[1].userInfo.img} alt="accounts__pic" />
                             </div>

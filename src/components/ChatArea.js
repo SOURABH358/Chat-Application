@@ -4,12 +4,13 @@ import { ChatContext } from "../Context/ChatContext";
 
 export function ChatArea(){
     const {state} = useContext(ChatContext);
+    console.log(state.user)
     return (
         <div className="chat__area">
                 <nav className="navbar">
                     <div className="account__profile">
-                        <img src={state.img} alt="account-pic" />
-                        <p>{state.displayName}</p>
+                        <img src={state.user.img?state.user.img:"/assets/default.jpg"} alt="account-pic" />
+                        <p>{state.user.displayName?state.user.displayName:"UserName"}</p>
                     </div>
                     <AiOutlineMenu className="icons" />
                 </nav>

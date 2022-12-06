@@ -1,9 +1,5 @@
-import { Action } from "@remix-run/router";
-import { doc, onSnapshot } from "firebase/firestore";
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext } from "react";
 import { useReducer } from "react";
-import { act } from "react-dom/test-utils";
-import { db } from "../components/firebase";
 import { AppContext } from "./context";
 export const ChatContext = createContext();
 export function ChatContextProvider({children}){
