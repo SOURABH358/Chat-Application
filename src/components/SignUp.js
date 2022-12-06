@@ -26,6 +26,7 @@ export default function SignUp() {
                     displayName: username,
                     email
                   });
+                  await setDoc(doc(db, "userChat", res.user.uid), {});
                 console.log(res)
                 navigate("/")
 
@@ -49,7 +50,7 @@ export default function SignUp() {
                     <input type="password" placeholder="password@123" />
                     <button className="submit__btn" type="submit">Sign Up</button>
                 </form>
-                <p className="notLogIn">Already Signed In? <Link to="/login">L</Link></p>
+                <p className="notLogIn">Already Signed In? <Link to="/login">Log In</Link></p>
             </div>
         </section>
     )

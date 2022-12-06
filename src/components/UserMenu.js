@@ -1,5 +1,5 @@
 import { auth, db } from "./firebase"
-import { signOut, updateProfile } from "firebase/auth"
+import { signOut, updateProfile, deleteUser } from "firebase/auth"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from "./firebase";
 import { useContext } from "react";
@@ -36,6 +36,13 @@ export default function UserMenu(){
    async function handleLogOut(){
         const res = await signOut(auth)
     }
+    // async function handleDelete(){
+    //     try{
+    //         await auth.deleteUser(currentUser.uid);
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+    // }
     return (
         <div className="user__menu">
             <form onSubmit={(e)=>handleProfileChange(e)}>

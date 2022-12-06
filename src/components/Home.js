@@ -1,86 +1,47 @@
 import { AiOutlineMenu, AiOutlineSend } from "react-icons/ai";
-import { useContext } from "react";
-import {AppContext} from "./../Context/context"
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "./../Context/context"
 import AccountsNav from "./AccountsNav";
 import SearchContainer from "./SearchContainer";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "./firebase";
 export default function Home() {
-    const {currentUser} = useContext(AppContext);
+    const { currentUser } = useContext(AppContext);
+    // const [ accounts, setAccounts ] = useState(null)
+    // console.log(accounts)
+    // useEffect(() => {
+    //     function getUsers() {
+    //         try{
+    //             const unsub = onSnapshot(doc(db, "userChat", currentUser.uid), (doc) => {
+    //                 console.log(Object.entries(doc.data()))
+    //                 setAccounts(Object.entries(doc.data()))
+    //             });
+    //             return () => {
+    //                 unsub();
+    //             }
+    //         }catch(error){
+    //             console.log(error)
+    //         }
+    //     }
+    //     getUsers();
+
+    // }, [])
     return (
         <section className="home__section">
             <div className="accounts__area">
-                <AccountsNav/>
+                <AccountsNav />
                 <div className="accounts__container">
-                    <div className="">
-
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-                    <div className="account">
-                        <div className="accounts__profile">
-                            <img src="/assets/account-1.jpg" alt="accounts__pic" />
-                        </div>
-                        <div>
-                            <p>Sourabh Yadav</p>
-                        </div>
-                    </div>
-
-
+                <div className="account">
+                            <div className="accounts__profile">
+                                <img src="" alt="accounts__pic" />
+                            </div>
+                            <div>
+                                <p>Hello</p>
+                            </div>
+                        </div> 
+                    
                 </div>
-                <SearchContainer/>
+                <SearchContainer />
             </div>
             <div className="chat__area">
                 <nav className="navbar">
