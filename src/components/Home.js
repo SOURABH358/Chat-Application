@@ -5,8 +5,11 @@ import AccountsNav from "./AccountsNav";
 import SearchContainer from "./SearchContainer";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase";
+import { ChatContext } from "../Context/ChatContext";
+import { ChatArea } from "./ChatArea";
 export default function Home() {
     const { currentUser } = useContext(AppContext);
+    const {dispatch} = useContext(ChatContext)
     const [accounts, setAccounts] = useState([])
     console.log(accounts)
     useEffect(() => {
@@ -25,6 +28,9 @@ export default function Home() {
         currentUser.uid && getUsers();
 
     }, [currentUser.uid])
+    function handleSelect(u){
+        dispatch({type:'CHANGE_USER', payload: u})
+    }
     return (
         <section className="home__section">
             <div className="accounts__area">
@@ -33,7 +39,7 @@ export default function Home() {
 
                     {accounts.map((account) => {
                         return(
-                        <div className="account">
+                        <div className="account" onClick={()=>handleSelect(account[1].userInfo)}>
                             <div className="accounts__profile">
                                 <img src={account[1].userInfo.img} alt="accounts__pic" />
                             </div>
@@ -46,69 +52,7 @@ export default function Home() {
                 </div>
                 <SearchContainer />
             </div>
-            <div className="chat__area">
-                <nav className="navbar">
-                    <div className="account__profile">
-                        <img src="/assets/account-1.jpg" alt="account-pic" />
-                        <p>Jonas</p>
-                    </div>
-                    <AiOutlineMenu className="icons" />
-                </nav>
-                <div className="chat__section">
-                    <div className="chat__container">
-                        <div className="message">
-                            <div className="message__account">
-                                <img src="/assets/account-1.jpg" alt="account-1" />
-                            </div>
-                            <p className="chat">hello!
-                            </p>
-                        </div>
-                        <div className="message">
-                            <div className="message__account">
-                                <img src="/assets/account-1.jpg" alt="account-1" />
-                            </div>
-                            <p className="chat">hello!
-                            </p>
-                        </div>
-                        <div className="message user">
-                            <div className="message__account">
-                                <img src="/assets/account-1.jpg" alt="account-1" />
-                            </div>
-                            <p className="chat">Hello how are you I hope you are doing fine</p>
-                        </div>
-                        <div className="message">
-                            <div className="message__account">
-                                <img src="/assets/account-1.jpg" alt="account-1" />
-                            </div>
-                            <p className="chat chat__image">
-                                <img src="/assets/pic-1.jfif" alt="pic" />
-                            </p>
-                        </div>
-                        <div className="message">
-                            <div className="message__account">
-                                <img src="/assets/account-1.jpg" alt="account-1" />
-                            </div>
-                            <p className="chat">
-                                hello
-                            </p>
-                        </div>
-                        <div className="message">
-                            <div className="message__account">
-                                <img src="/assets/account-1.jpg" alt="account-1" />
-                            </div>
-                            <p className="chat">
-                                hello
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="message__area">
-                    <form className="message__form">
-                        <input type="text" placeholder="Type..." />
-                        <AiOutlineSend className="icons" />
-                    </form>
-                </div>
-            </div>
+            <ChatArea/>
         </section>
     )
 }
