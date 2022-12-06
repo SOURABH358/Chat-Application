@@ -6,7 +6,7 @@ export function ChatContextProvider({children}){
     const {currentUser} = useContext(AppContext)
     const INITIAL_STATE = {
         user: {},
-        chatId: ''
+        chatId: 'null'
     }
    
     function reducer(state, action){
