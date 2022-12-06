@@ -10,19 +10,15 @@ export default function Home() {
     const { currentUser } = useContext(AppContext);
     const {dispatch} = useContext(ChatContext)
     const [accounts, setAccounts] = useState([])
-    console.log(accounts)
     useEffect(() => {
         function getUsers() {
-            try {
                 const unsub = onSnapshot(doc(db, "userChat", currentUser.uid), (doc) => {
                     setAccounts(Object.entries(doc.data()))
                 });
                 return () => {
                     unsub();
                 }
-            } catch (error) {
-                console.log(error)
-            }
+            
         }
         currentUser.uid && getUsers();
 
