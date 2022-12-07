@@ -362,11 +362,19 @@ body {
                 align-items: center;
                 background-color: $white;
                 input {
-                    width: 96%;
+                    width: 90%;
                     height: 2.5rem;
                     padding: 0 1rem;
                     border: none;
                     
+                }
+                .message__icons{
+                    display: flex;
+                    gap: 1rem;
+                    button{
+                        background-color: transparent;
+                        border: none;
+                    }
                 }
             }
         }
