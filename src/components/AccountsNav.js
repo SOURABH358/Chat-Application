@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 export default function AccountsNav() {
     const { currentUser } = useContext(AppContext);
     const [showMenu, setShowMenu] = useState(false);
-
+    console.log(currentUser)
     return (
         <div className="accounts__nav">
             {showMenu ? <UserMenu /> : null}

@@ -11,7 +11,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 export function ChatArea() {
     const [text, setText] = useState('');
-    const [img, setImg] = useState('');
+    const [img, setImg] = useState(null);
     const { state } = useContext(ChatContext);
     const { currentUser } = useContext(AppContext)
     async function handleSubmit() {
@@ -56,7 +56,7 @@ export function ChatArea() {
             [state.chatId+".userInfo.lastMessage"]: text,
             [state.chatId+".userInfo.messageDate"]: serverTimestamp()
         })
-        setImg('');
+        setImg(null);
         setText('');
     }
     return (
@@ -78,7 +78,6 @@ export function ChatArea() {
 
                         <label htmlFor="change__pic"><AiOutlineLink className="icons" />
                             <input id="change__pic" type="file" name="change__pic" accept="image/*"
-                                value={img}
                                 onChange={(e) => setImg(e.target.files[0])} /></label>
                         <button type="button"><AiOutlineSend className="icons" onClick={handleSubmit} /></button>
                     </div>
