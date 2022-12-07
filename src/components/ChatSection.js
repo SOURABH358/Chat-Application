@@ -2,7 +2,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react"
 import { ChatContext } from "../Context/ChatContext";
 import { db } from "./firebase";
-
+import { v4 as uuid } from "uuid";
 export default function ChatSection() {
     const [messages, setMessages] = useState([]);
     const { state } = useContext(ChatContext)
@@ -21,11 +21,11 @@ export default function ChatSection() {
                 {
                     messages.map(m => {
                         return (
-                            <div className="message">
+                            <div className="message" key={uuid()}>
                                 <div className="message__account">
                                     <img src="/assets/account-1.jpg" alt="account-1" />
                                 </div>
-                                <p className="chat">hello!
+                                <p className="chat">{m.text}
                                 </p>
                             </div>
                         )

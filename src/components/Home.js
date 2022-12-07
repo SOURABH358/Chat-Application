@@ -23,6 +23,7 @@ export default function Home() {
         currentUser.uid && getUsers();
 
     }, [currentUser.uid])
+    console.log(accounts)
     function handleSelect(u){
         dispatch({type:'CHANGE_USER', payload: u})
     }
@@ -32,14 +33,15 @@ export default function Home() {
                 <AccountsNav />
                 <div className="accounts__container">
 
-                    {accounts.map((account) => {
+                    {accounts.sort((a,b)=>a[1].userInfo.messageDate-b[1].userInfo.messageDate).map((account) => {
                         return(
                         <div className="account" key = {account[1].userInfo.uid} onClick={()=>handleSelect(account[1].userInfo)}>
                             <div className="accounts__profile">
-                                <img src={account[1].userInfo.img} alt="accounts__pic" />
+                                <img src={account[1].userInfo?account[1].userInfo.img:"/assets/default.img"} alt="accounts__pic" />
                             </div>
                             <div>
-                                <p>{account[1].userInfo.displayName}</p>
+                                <p>{account[1].userInfo?account[1].userInfo.displayName:"Unknown"}</p>
+                                <p className="last__message">{account[1].userInfo?account[1].userInfo.lastMessage:""}</p>
                             </div>
                         </div>)
                     })}
