@@ -186,6 +186,9 @@ body {
 
             .user__profile {
                 color: $black-1;
+                display: flex;
+                gap: 1rem;
+                align-items: center;
                 img {
                     width: 3rem;
                     height: 3rem;

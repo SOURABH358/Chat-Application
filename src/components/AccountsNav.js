@@ -11,7 +11,7 @@ export default function AccountsNav() {
             {showMenu ? <UserMenu /> : null}
             <div className="user__profile">
                 <img src={currentUser.photoURL ? currentUser.photoURL : "/assets/default.jpg"} alt="user-pic" />
-                <div>{currentUser.displayName}</div>
+                <div>{currentUser.displayName?currentUser.displayName:"You"}</div>
             </div>
             <AiOutlineMenu className="icons" onClick={() => setShowMenu(!showMenu)} />
         </div>
