@@ -210,7 +210,7 @@ body {
                 border-bottom: 1px solid $black-3;
                 align-items: center;
                 margin-left: 0.5rem;
-                
+                cursor: default;
                 .accounts__profile {
                     img {
                         width: 2rem;
@@ -385,7 +385,11 @@ body {
     }
 
 }
-
+.loading__section{
+    width: 100%;
+    height: 100vh;
+    background-color: $yellow-1;
+}
 .icons {
     font-size: 1.5rem;
     cursor: pointer;
