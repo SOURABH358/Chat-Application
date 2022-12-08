@@ -13,7 +13,7 @@ export default function AccountsNav() {
                 <img src={currentUser.photoURL ? currentUser.photoURL : "/assets/default.jpg"} alt="user-pic" />
                 <div>{currentUser.displayName?currentUser.displayName:"You"}</div>
             </div>
-            <AiOutlineMenu className="icons" onClick={() => setShowMenu(!showMenu)} />
+            <AiOutlineMenu className={`icons ${showMenu?"rotate":""}`} onClick={() => setShowMenu(!showMenu)} />
         </div>
     )
 }

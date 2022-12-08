@@ -2,10 +2,11 @@ import { auth, db } from "./firebase"
 import { signOut, updateProfile, deleteUser } from "firebase/auth"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from "./firebase";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "./../Context/context"
 import { doc, updateDoc } from "firebase/firestore";
 export default function UserMenu(){
+    const [showSubmit, setShowSubmit] = useState(false);
     const {currentUser} = useContext(AppContext)
     const storageRef = ref(storage, `${currentUser.displayName}.jpg`);
     function handleProfileChange(e){
@@ -45,13 +46,15 @@ export default function UserMenu(){
     // }
     return (
         <div className="user__menu">
-            <form onSubmit={(e)=>handleProfileChange(e)}>
-            <input id = "change__pic" type="file" name = "change__pic" accept="image/*"/>
-            <label htmlFor ="change__pic">Change Pic</label>
-            <button type = "submit" >Update</button>
+            <form onSubmit={(e)=>handleProfileChange(e)} onMouseEnter={()=>setShowSubmit(true)} onMouseLeave={()=>setShowSubmit(false)}>
+            {showSubmit?<div className="pic__change">
+                <input id = "change__pic" type="file" name = "change__pic" accept="image/*"/>
+                <label htmlFor ="change__pic">Select Pic</label>
+            </div>:""}
+                <button type = "submit" >Update</button>
             </form>
             <p onClick={()=>handleLogOut()}>Log Out</p>
-            <p>Delete User</p>
+            {/* <p>Delete User</p> */}
         </div>
     )
 }

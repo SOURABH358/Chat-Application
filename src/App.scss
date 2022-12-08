@@ -150,12 +150,33 @@ body {
     padding: 0;
     right: 0;
     font-size: 0.9rem;
-    p, .form{
-        padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    
+    p, form{
         cursor: pointer;
+        padding: 0.5rem 1rem;
         &:hover{
-            background-color: $grey;
+            background-color: $yellow-1;
         }
+    }
+    .pic__change{
+        position: absolute;
+        top: 0;
+        right: -7rem;
+        text-align: center;
+        background-color: $white;
+        width: 7rem;
+        padding: 0.5rem 0;
+        &:hover{
+            background-color: $yellow-1;
+        }
+    }   
+
+    button{
+        background-color: transparent;
+        border: none;
+        
     }
 }
 .home__section {
@@ -195,6 +216,10 @@ body {
                     border-radius: 50%;
                 }
             }
+            
+            .rotate{
+                transform: rotate(90deg);
+            }
         }
 
         .accounts__container {
@@ -210,6 +235,7 @@ body {
                 border-bottom: 1px solid $black-3;
                 align-items: center;
                 margin-left: 0.5rem;
+                
                 cursor: default;
                 .accounts__profile {
                     img {
@@ -297,6 +323,7 @@ body {
             overflow-y: scroll;
             background-image: url(./../public/assets/background-2.jpg);
             background-position: center;
+            scroll-behavior: smooth;
 
             .chat__container {
                 width: 100%;
@@ -346,6 +373,10 @@ body {
                     
                 }
             }
+            .hidden{
+                width: 0;
+                height: 0;
+            }
 
         }
 
@@ -388,6 +419,8 @@ body {
 .icons {
     font-size: 1.5rem;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
 }
 .last__message{
     font-size: 0.7rem;
