@@ -1,5 +1,6 @@
+import { HiChatAlt2 } from "react-icons/hi";
 export default function Loading (){
     return <section className="loading__section">
-        <img src="/assets/app_icons.png" alt="app_icon"/>
+        <HiChatAlt2 className="icons"/>
     </section>
 }

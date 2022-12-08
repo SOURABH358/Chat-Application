@@ -6,6 +6,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase";
 import { ChatContext } from "../Context/ChatContext";
 import { ChatArea } from "./ChatArea";
+import Loading from "./Loading";
 export default function Home() {
     const { currentUser } = useContext(AppContext);
     const {dispatch} = useContext(ChatContext)
@@ -26,6 +27,9 @@ export default function Home() {
     console.log(accounts)
     function handleSelect(u){
         dispatch({type:'CHANGE_USER', payload: u})
+    }
+    if(!currentUser){
+        return <Loading/>
     }
     return (
         <section className="home__section">

@@ -17,8 +17,7 @@ export default function App(){
     return (
         <Routes>
             <Route path="/" >
-                {/* <Route index element={<ProtectedRoute><Home/></ProtectedRoute>}></Route> */}
-                <Route index element={<Loading/>}></Route>
+                <Route index element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
                 <Route path="login" element={<LogIn/>}/>
                 <Route path="signup" element={<SignUp/>}/>
             </Route>
