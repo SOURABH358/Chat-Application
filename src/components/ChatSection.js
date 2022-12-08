@@ -41,9 +41,7 @@ export default function ChatSection() {
                 }
                 
             </div>
-            {/* <div ref={ref} className="hidden">
-
-            </div> */}
+            
         </div>
     )
 }
