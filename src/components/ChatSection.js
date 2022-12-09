@@ -12,17 +12,25 @@ export default function ChatSection() {
     useEffect(() => {
         const unsub = onSnapshot(doc(db, "chats", state.chatId), (doc) => {
             doc.exists() && setMessages(doc.data().messages);
-            ref.current.scrollTop = ref.scrollHeight;
-            // ref.scrollTop=0;
+            if(ref.current){
+                ref.current.scrollTop= ref.current.scrollHeight;
+                console.log('I am in ref')
+               }
         });
         return () => {
             unsub();
         }
 
     }, [state.chatId])
+    useEffect(()=>{
+        if(ref.current){
+            ref.current.scrollTop= ref.current.scrollHeight;
+            console.log('I am in ref')
+           }
+    },[messages])
     return (
-        <div className="chat__section" ref={ref}>
-            <div  className="chat__container">
+        <div className="chat__section" ref={ref} >
+            <div className="chat__container">
                 {
                     messages.map(m => {
                         return (

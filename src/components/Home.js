@@ -24,7 +24,6 @@ export default function Home() {
         currentUser.uid && getUsers();
 
     }, [currentUser.uid])
-    console.log(accounts)
     function handleSelect(u){
         dispatch({type:'CHANGE_USER', payload: u})
     }
