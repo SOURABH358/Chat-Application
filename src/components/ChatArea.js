@@ -66,7 +66,7 @@ export function ChatArea() {
                     <img src={state.user.img ? state.user.img : "/assets/default.jpg"} alt="account-pic" />
                     <p>{state.user.displayName ? state.user.displayName : ""}</p>
                 </div>
-                {/* <p style={{fontWeight:"600"}}>CHatZ</p> */}
+                <p style={{fontWeight:"600"}}>CHatZ</p>
                 <div className="chat__icons">
                     <BsCameraVideoFill className="icons"/>
                     <BsTelephoneFill className="icons"/>

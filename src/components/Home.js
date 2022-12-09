@@ -6,7 +6,6 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase";
 import { ChatContext } from "../Context/ChatContext";
 import { ChatArea } from "./ChatArea";
-import Loading from "./Loading";
 export default function Home() {
     const { currentUser } = useContext(AppContext);
     const {dispatch} = useContext(ChatContext)

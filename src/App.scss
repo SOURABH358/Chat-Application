@@ -249,8 +249,8 @@ body {
                 cursor: default;
                 .accounts__profile {
                     img {
-                        width: 2rem;
-                        height: 2rem;
+                        width: 2.5rem;
+                        height: 2.5rem;
                         border-radius: 50%;
                     }
                     
@@ -327,10 +327,8 @@ body {
             }
             .chat__icons{
                 display: flex;
-                gap: 1rem;
-                .icons{
-                    font-size: 3rem;
-                }
+                gap: 2rem;
+                
             }
         }
 
