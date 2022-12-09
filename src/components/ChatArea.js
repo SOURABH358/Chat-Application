@@ -1,7 +1,7 @@
 import { arrayUnion, doc, serverTimestamp, Timestamp, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
-import { AiOutlineMenu, AiOutlineSend, AiOutlineLink } from "react-icons/ai";
-import { HiChatAlt2 } from "react-icons/hi";
+import { AiOutlineSend, AiOutlineLink } from "react-icons/ai";
+import { BsFillPersonPlusFill, BsCameraVideoFill, BsTelephoneFill } from "react-icons/bs";
 import { ChatContext } from "../Context/ChatContext";
 import { AppContext } from "../Context/context";
 import ChatSection from "./ChatSection";
@@ -66,8 +66,12 @@ export function ChatArea() {
                     <img src={state.user.img ? state.user.img : "/assets/default.jpg"} alt="account-pic" />
                     <p>{state.user.displayName ? state.user.displayName : ""}</p>
                 </div>
-                <p style={{fontWeight:"600"}}>CHatZ</p>
-                {/* <HiChatAlt2 style={{fontSize:"3rem"}} className="icons" /> */}
+                {/* <p style={{fontWeight:"600"}}>CHatZ</p> */}
+                <div className="chat__icons">
+                    <BsCameraVideoFill className="icons"/>
+                    <BsTelephoneFill className="icons"/>
+                    <BsFillPersonPlusFill className="icons"/>
+                </div>
             </nav>
             <ChatSection />
             <div className="message__area">

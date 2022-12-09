@@ -325,6 +325,13 @@ body {
                     border-radius: 50%;
                 }
             }
+            .chat__icons{
+                display: flex;
+                gap: 1rem;
+                .icons{
+                    font-size: 3rem;
+                }
+            }
         }
 
         .chat__section {

@@ -27,9 +27,7 @@ export default function Home() {
     function handleSelect(u){
         dispatch({type:'CHANGE_USER', payload: u})
     }
-    if(!currentUser){
-        return <Loading/>
-    }
+    
     return (
         <section className="home__section">
             <div className="accounts__area">
