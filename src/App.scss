@@ -10,6 +10,7 @@ $light-blue: rgb(232, 244, 248);
 $grey: rgb(248, 248, 248);
 $light-red: #ff8080;
 $light-green:#80ff80;
+$light-blue: #A2BAF5;
 
 *,
 *::after,
@@ -29,7 +30,7 @@ input[type="file"]{
 body {
     color: var($black-1);
     min-height: 100vh;
-    background-color: lightskyblue;
+    background-color: $light-blue;
 }
 
 ::-webkit-scrollbar {
@@ -132,10 +133,17 @@ body {
         flex-direction: column;
         align-items: center;
         .submit__btn {
-            margin-top: 0rem;
+            margin-top: 2.5rem;
         }
         .form input{
             margin-bottom: 2rem;
+        }
+        .select__pic{
+            padding: 0.5rem 1rem;
+            background-color: lightskyblue;
+            color: $white;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
         }
     }
 
@@ -162,18 +170,18 @@ body {
             background-color: $yellow-1;
         }
     }
-    .pic__change{
-        position: absolute;
-        top: 0;
-        right: -7rem;
-        text-align: center;
-        background-color: $white;
-        width: 7rem;
-        padding: 0.5rem 0;
-        &:hover{
-            background-color: $yellow-1;
-        }
-    }   
+    // .pic__change{
+    //     position: absolute;
+    //     top: 0;
+    //     right: -7rem;
+    //     text-align: center;
+    //     background-color: $white;
+    //     width: 7rem;
+    //     padding: 0.5rem 0;
+    //     &:hover{
+    //         background-color: $yellow-1;
+    //     }
+    // }   
 
     button{
         background-color: transparent;
@@ -329,8 +337,7 @@ body {
 
             .chat__container {
                 width: 100%;
-                padding: 0 1rem;
-                padding-bottom: 1rem;
+                padding: 1rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -347,14 +354,19 @@ body {
                             border-radius: 50%;
                         }
                     }
-
+                    .chat__box{
+                        display: flex;
+                        flex-direction:column;
+                        align-items: center;
+                        gap: 1rem;
+                    }
                     .chat {
                         max-width: 20rem;
                         height: fit-content;
                         background-color: $yellow-1;
                         padding: 0.5rem 1rem;
                         border-radius: 0.5rem;
-                        
+                        display: block;
                         line-height: 1.5rem;
 
                         img {

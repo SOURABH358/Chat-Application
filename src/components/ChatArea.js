@@ -67,7 +67,7 @@ export function ChatArea() {
                     <p>{state.user.displayName ? state.user.displayName : ""}</p>
                 </div>
                 <p style={{fontWeight:"600"}}>CHatZ</p>
-                <HiChatAlt2 style={{fontSize:"3rem"}} className="icons" />
+                {/* <HiChatAlt2 style={{fontSize:"3rem"}} className="icons" /> */}
             </nav>
             <ChatSection />
             <div className="message__area">

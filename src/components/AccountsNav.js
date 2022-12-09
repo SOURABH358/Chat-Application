@@ -2,10 +2,11 @@ import UserMenu from "./UserMenu";
 import { useContext, useState } from "react";
 import { AppContext } from "./../Context/context"
 import { AiOutlineMenu } from "react-icons/ai";
+import { auth } from "./firebase";
 export default function AccountsNav() {
     const { currentUser } = useContext(AppContext);
     const [showMenu, setShowMenu] = useState(false);
-    console.log(currentUser.displayName)
+    
     return (
         <div className="accounts__nav">
             {showMenu ? <UserMenu /> : null}

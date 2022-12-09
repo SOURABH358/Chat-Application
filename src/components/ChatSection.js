@@ -9,6 +9,7 @@ export default function ChatSection() {
     const { state } = useContext(ChatContext)
     const {currentUser} = useContext(AppContext)
     const ref = useRef();
+    console.log(state)
     useEffect(() => {
         const unsub = onSnapshot(doc(db, "chats", state.chatId), (doc) => {
             doc.exists() && setMessages(doc.data().messages);
@@ -36,13 +37,15 @@ export default function ChatSection() {
                         return (
                             <div ref={ref}  className={`message ${currentUser.uid===m.senderId?"user":""}`} key={uuid()}>
                                 <div className="message__account">
-                                    <img src={currentUser.uid===m.senderId?currentUser.photoURL:state.user.photoURL?state.user.photoURL:"assets/default.jpg"} alt="account-1" />
+                                    <img src={currentUser.uid===m.senderId?currentUser.photoURL:(state.user.img?state.user.img:"assets/default.jpg")} alt="account-1" />
                                 </div>
+                                <div className="chat__box">
                                 {m.text?<p className="chat">{m.text}
                                 </p>:""}
                                 {m.img?<div className="chat chat__image">
                                     <img src={m.img} alt="chat"/>
                                 </div>:''}
+                                    </div>
                             </div>
                         )
                     })

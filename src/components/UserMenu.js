@@ -8,32 +8,32 @@ import { doc, updateDoc } from "firebase/firestore";
 export default function UserMenu(){
     const [showSubmit, setShowSubmit] = useState(false);
     const {currentUser} = useContext(AppContext)
-    const storageRef = ref(storage, `${currentUser.displayName}.jpg`);
-    function handleProfileChange(e){
-        e.preventDefault();
-        const file = e.target[0].files[0];
-        const uploadTask = uploadBytesResumable(storageRef, file);
+    // const storageRef = ref(storage, `${currentUser.displayName}.jpg`);
+    // function handleProfileChange(e){
+    //     e.preventDefault();
+    //     const file = e.target[0].files[0];
+    //     const uploadTask = uploadBytesResumable(storageRef, file);
     
-        uploadTask.on(
-            (error) => {
-                console.log(error)
-            },
-            () => {
-                getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
-                    const docRef = doc(db, "users", currentUser.uid);
-                    const res = await updateDoc(docRef, {
-                         photoURL: downloadURL
-                         });
-                    await updateProfile(currentUser, {
-                        photoURL: downloadURL
-                    })
-                         console.log(res)
-                });
-            }
-        );
-        // window.location.reload();
+    //     uploadTask.on(
+    //         (error) => {
+    //             console.log(error)
+    //         },
+    //         () => {
+    //             getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
+    //                 const docRef = doc(db, "users", currentUser.uid);
+    //                 const res = await updateDoc(docRef, {
+    //                      photoURL: downloadURL
+    //                      });
+    //                 await updateProfile(currentUser, {
+    //                     photoURL: downloadURL
+    //                 })
+    //                      console.log(res)
+    //             });
+    //         }
+    //     );
+    //     // window.location.reload();
         
-    }
+    // }
    async function handleLogOut(){
         const res = await signOut(auth)
     }
@@ -46,13 +46,12 @@ export default function UserMenu(){
     // }
     return (
         <div className="user__menu">
-            <form onSubmit={(e)=>handleProfileChange(e)} onMouseEnter={()=>setShowSubmit(true)} >
+            {/* <form onSubmit={(e)=>handleProfileChange(e)} onMouseEnter={()=>setShowSubmit(true)} >
             {showSubmit?<div className="pic__change">
-                <input id = "change__pic" type="file" name = "change__pic" accept="image/*"/>
-                <label htmlFor ="change__pic">Select Pic</label>
+                
             </div>:""}
                 <button type = "submit" >Update</button>
-            </form>
+            </form> */}
             <p onClick={()=>handleLogOut()}>Log Out</p>
             {/* <p>Delete User</p> */}
         </div>
