@@ -40,10 +40,10 @@ export default function Home() {
                         return(
                         <div className="account" key = {account[1].userInfo.uid} onClick={()=>handleSelect(account[1].userInfo)}>
                             <div className="accounts__profile">
-                                <img src={account[1].userInfo?account[1].userInfo.img:"/assets/default.img"} alt="accounts__pic" />
+                                <img src={account[1].userInfo.img?account[1].userInfo.img:"/assets/default.img"} alt="accounts__pic" />
                             </div>
                             <div>
-                                <p>{account[1].userInfo?account[1].userInfo.displayName:"Unknown"}</p>
+                                <p>{account[1].userInfo.displayName?account[1].userInfo.displayName:"Unknown"}</p>
                                 <p className="last__message">{account[1].userInfo?account[1].userInfo.lastMessage:""}</p>
                             </div>
                         </div>)

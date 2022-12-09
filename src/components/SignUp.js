@@ -18,13 +18,14 @@ export default function SignUp() {
             throw('email and password not provided');
         }
         if (password!==confirmPassword){
-            alert('password and confirm password do not match');
+            throw('password and confirm password do not match');
         }
                 const res = await createUserWithEmailAndPassword(auth, email, password);
                 await setDoc(doc(db, "users", res.user.uid), {
                     uid: res.user.uid,
                     displayName: username,
-                    email
+                    email,
+                    photoURL: "/assets/default.jpg"
                   });
                   await setDoc(doc(db, "userChat", res.user.uid), {});
                 console.log(res)
@@ -32,7 +33,7 @@ export default function SignUp() {
 
         }
         catch(err){
-            console.log(err)
+            alert(err)
         }
     }
     return (

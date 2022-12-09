@@ -46,7 +46,7 @@ export default function UserMenu(){
     // }
     return (
         <div className="user__menu">
-            <form onSubmit={(e)=>handleProfileChange(e)} onMouseEnter={()=>setShowSubmit(true)} onMouseLeave={()=>setShowSubmit(false)}>
+            <form onSubmit={(e)=>handleProfileChange(e)} onMouseEnter={()=>setShowSubmit(true)} >
             {showSubmit?<div className="pic__change">
                 <input id = "change__pic" type="file" name = "change__pic" accept="image/*"/>
                 <label htmlFor ="change__pic">Select Pic</label>

@@ -1,8 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
 import {signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import Error from "./Error.js";
 
 function LogIn() {
+    const [Err, setErr] = useState(false);
     const navigate = useNavigate();
     async function handleSubmit(e) {
         e.preventDefault();
@@ -24,9 +27,17 @@ function LogIn() {
         }
         catch(err){
             console.log(err)
+            setErr(true);
+            setTimeout(() => {
+                setErr(false);
+            }, 1500);
         }
     }
     return <section className="LogIn__section">
+        {Err?<Error 
+        message="wrong Credentials"
+        color = "danger"
+        />:""}
         <div className="LogIn__container">
             <h2>Log In</h2>
             <form id = "LogIn__form" className="form" onSubmit={(e)=>handleSubmit(e)}>

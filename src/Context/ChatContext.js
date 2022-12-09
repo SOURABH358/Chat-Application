@@ -19,6 +19,7 @@ export function ChatContextProvider({children}){
                 : action.payload.uid + currentUser.uid
             }
         }
+        return state;
     }
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     return <ChatContext.Provider value={{state, dispatch}}>

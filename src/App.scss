@@ -8,6 +8,8 @@ $black-3: rgb(16, 12, 8);
 $white: rgb(255, 255, 255);
 $light-blue: rgb(232, 244, 248);
 $grey: rgb(248, 248, 248);
+$light-red: #ff8080;
+$light-green:#80ff80;
 
 *,
 *::after,
@@ -435,6 +437,22 @@ body {
         font-size: 6rem;
         animation: logo 1s linear 0s 1 forward;
     }
+}
+.error__msg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 0rem;
+    width: 100%;
+    text-align: center;
+    color: $white;
+}
+
+.danger{
+    background-color: $light-red;
+}
+.success{
+    background-color: $light-green;
 }
 @keyframes logo{
     0%{

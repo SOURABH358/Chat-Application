@@ -13,7 +13,7 @@ export default function ChatSection() {
         const unsub = onSnapshot(doc(db, "chats", state.chatId), (doc) => {
             doc.exists() && setMessages(doc.data().messages);
             if(ref.current){
-                ref.current.scrollTop= ref.current.scrollHeight;
+                ref.current.scrollIntoView({behavior: "smooth"});
                 console.log('I am in ref')
                }
         });
@@ -24,19 +24,19 @@ export default function ChatSection() {
     }, [state.chatId])
     useEffect(()=>{
         if(ref.current){
-            ref.current.scrollTop= ref.current.scrollHeight;
+            ref.current.scrollIntoView({behavior: "smooth"});
             console.log('I am in ref')
            }
     },[messages])
     return (
-        <div className="chat__section" ref={ref} >
+        <div className="chat__section" >
             <div className="chat__container">
                 {
                     messages.map(m => {
                         return (
-                            <div className={`message ${currentUser.uid===m.senderId?"user":""}`} key={uuid()}>
+                            <div ref={ref}  className={`message ${currentUser.uid===m.senderId?"user":""}`} key={uuid()}>
                                 <div className="message__account">
-                                    <img src="/assets/account-1.jpg" alt="account-1" />
+                                    <img src={currentUser.uid===m.senderId?currentUser.photoURL:state.user.photoURL?state.user.photoURL:"assets/default.jpg"} alt="account-1" />
                                 </div>
                                 {m.text?<p className="chat">{m.text}
                                 </p>:""}
