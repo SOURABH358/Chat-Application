@@ -1,6 +1,6 @@
 import { arrayUnion, doc, serverTimestamp, Timestamp, updateDoc } from "firebase/firestore";
 import { useContext, useState } from "react";
-import { AiOutlineSend, AiOutlineLink } from "react-icons/ai";
+import { AiOutlineSend, AiOutlineLink, AiOutlineMenu } from "react-icons/ai";
 import { BsFillPersonPlusFill, BsCameraVideoFill, BsTelephoneFill } from "react-icons/bs";
 import { ChatContext } from "../Context/ChatContext";
 import { AppContext } from "../Context/context";
@@ -59,14 +59,19 @@ export function ChatArea() {
         setImg(null);
         setText('');
     }
+    function handleSelect(){
+        document.getElementById('accounts__area').classList.add('show');
+    }
     return (
         <div className="chat__area">
             <nav className="navbar">
                 <div className="account__profile">
+                    
                     <img src={state.user.img ? state.user.img : "/assets/default.jpg"} alt="account-pic" />
                     <p>{state.user.displayName ? state.user.displayName : ""}</p>
                 </div>
                 <p style={{fontWeight:"600"}}>CHatZ</p>
+                <AiOutlineMenu id = "chat__Menu" className = "icons" onClick={handleSelect}/>
                 <div className="chat__icons">
                     <BsCameraVideoFill className="icons"/>
                     <BsTelephoneFill className="icons"/>

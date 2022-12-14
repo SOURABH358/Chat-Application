@@ -24,12 +24,13 @@ export default function Home() {
 
     }, [currentUser.uid])
     function handleSelect(u){
+        document.getElementById('accounts__area').classList.remove('show')
         dispatch({type:'CHANGE_USER', payload: u})
     }
     
     return (
         <section className="home__section">
-            <div className="accounts__area">
+            <div id = "accounts__area" className="accounts__area">
                 <AccountsNav />
                 <div className="accounts__container">
 

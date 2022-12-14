@@ -71,6 +71,11 @@ body {
             text-align: center;
             margin-bottom: 3rem;
         }
+        @media screen and (max-width: 640px) {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
     }
 }
 
@@ -145,6 +150,11 @@ body {
             margin-bottom: 2rem;
             border-radius: 0.5rem;
         }
+        @media screen and (max-width: 640px) {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
     }
 
     h2 {
@@ -193,14 +203,18 @@ body {
     display: flex;
     height: 100vh;
     padding: 2rem 4rem;
-
+    @media screen and (max-width: 640px) {
+        position: relative;
+        padding: 0;
+    }
+    
     .accounts__area {
         box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.3);
         position: relative;
         height: 100%;
         width: 25%;
         background-color: $grey;
-
+        transition: 0.5s ease-in-out;
         // border-right: 1px solid $grey;
         // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
         .accounts__nav {
@@ -253,7 +267,7 @@ body {
                         height: 2.5rem;
                         border-radius: 50%;
                     }
-                    
+                   
                 }
             }
         }
@@ -298,14 +312,26 @@ body {
                 }
             }
         }
+        @media screen and (max-width: 640px) {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            // display: none;
+        }
     }
-
+    .show{
+        left:0;
+    }
     .chat__area {
         box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.3);
         width: 75%;
         height: 100%;
 
-
+        @media screen and (max-width: 640px) {
+            width: 100%;
+            height: 100%;
+        }
         .navbar {
             height: 12vh;
             background-color: $yellow-2;
@@ -324,11 +350,31 @@ body {
                     height: 3rem;
                     border-radius: 50%;
                 }
+                p{
+                    @media screen and (max-width: 600px) {
+                        display: block;
+                    }
+                }
+                
+            }
+            #chat__Menu{
+                display: none;
+                @media screen and (max-width: 640px) {
+                    display: block;
+                }
+            }
+            p{
+                @media screen and (max-width: 640px) {
+                    display: none;
+                }
             }
             .chat__icons{
                 display: flex;
                 gap: 2rem;
-                
+                @media screen and (max-width: 640px) {
+                    display: none;
+                }
+
             }
         }
 
@@ -415,12 +461,17 @@ body {
                 display: flex;
                 align-items: center;
                 background-color: $white;
+                @media screen and (max-width: 640px) {
+                    width: 90%;
+                }
                 input {
                     width: 90%;
                     height: 2.5rem;
                     padding: 0 1rem;
                     border: none;
-                    
+                    @media screen and (max-width: 640px) {
+                        width: 80%;
+                    }
                 }
                 .message__icons{
                     display: flex;
