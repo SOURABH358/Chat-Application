@@ -17,9 +17,11 @@
 </p>
 <p align="center">
   <img src = "./Screenshot/screenshot__2.jpg">
-</p>
-## Links
-Live Site - [Live Site Url here](https://strong-lollipop-0d4856.netlify.app/)
+</p>  
+
+## Links  
+Live Site - [Live Site Url here](https://strong-lollipop-0d4856.netlify.app/)  
+
 ## Author
 GitHub - [@Sourabh358](https://github.com/SOURABH358)  
 Frontend Mentor - [@Sourabh358](https://www.frontendmentor.io/profile/sourabh358)  
