@@ -370,7 +370,7 @@ body {
             }
             .chat__icons{
                 display: flex;
-                gap: 2rem;
+                gap: 3rem;
                 @media screen and (max-width: 640px) {
                     display: none;
                 }

@@ -34,7 +34,7 @@ export default function Home() {
                 <AccountsNav />
                 <div className="accounts__container">
 
-                    {accounts.sort((a,b)=>a[1].userInfo.messageDate-b[1].userInfo.messageDate).map((account) => {
+                    {accounts.sort((a,b)=>b[1].userInfo.messageDate-a[1].userInfo.messageDate).map((account) => {
                         return(
                         <div className="account" key = {account[1].userInfo.uid} onClick={()=>handleSelect(account[1].userInfo)}>
                             <div className="accounts__profile">

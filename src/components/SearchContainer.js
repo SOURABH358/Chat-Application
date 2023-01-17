@@ -60,7 +60,7 @@ export default function SearchContainer() {
     }
     return (
         <div className="search__container">
-            <input type="text" placeholder="Type..." value={username} onChange={(e) => SetUsername(e.target.value)} onKeyDown={(e) => handleKey(e)} />
+            <input type="text" placeholder="Search..." value={username} onChange={(e) => SetUsername(e.target.value)} onKeyDown={(e) => handleKey(e)} />
             {user && <div className="search__result" onClick={handleSelect}>
                 <div className="search__avatar">
                     <img src={user.photoURL?user.photoURL:'/assets/default.jpg'} alt="user pic" />
